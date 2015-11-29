@@ -21,7 +21,10 @@
 */
 
 #include <boost/format.hpp>
-
+#ifdef _WIN32
+#    define NOMINMAX
+#    include <WinSock2.h>
+#endif
 #include "parse-osmium.hpp"
 #include "reprojection.hpp"
 #include "osmdata.hpp"

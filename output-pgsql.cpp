@@ -18,7 +18,9 @@
 #include <cstdlib>
 #include <cstring>
 #include <ctime>
-#include <unistd.h>
+#ifndef _WIN32
+#    include <unistd.h>
+#endif
 
 #include <boost/algorithm/string/predicate.hpp>
 #include <boost/bind.hpp>

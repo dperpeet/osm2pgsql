@@ -15,7 +15,9 @@
 #include <string.h>
 #include <sys/stat.h>
 #include <sys/types.h>
-#include <unistd.h>
+#ifndef _WIN32
+#    include <unistd.h>
+#endif
 
 #include "node-persistent-cache.hpp"
 #include "options.hpp"

@@ -57,7 +57,9 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
-#include <unistd.h>
+#ifndef _WIN32
+#    include <unistd.h>
+#endif
 
 #include "config.h"
 
