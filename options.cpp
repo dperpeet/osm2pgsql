@@ -292,10 +292,14 @@ options_t::options_t(int argc, char *argv[]): options_t()
     int c;
 
     //keep going while there are args left to handle
+#ifndef _WIN32
     // note: optind would seem to need to be set to 1, but that gives valgrind
     // errors - setting it to zero seems to work, though. see
     // http://stackoverflow.com/questions/15179963/is-it-possible-to-repeat-getopt#15179990
     optind = 0;
+#else
+	optind = 1;
+#endif
     while(-1 != (c = getopt_long(argc, argv, short_options, long_options, nullptr))) {
 
         //handle the current arg
