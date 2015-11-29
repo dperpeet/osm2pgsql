@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="getopt">
+      <UniqueIdentifier>{53807db4-886d-4ef3-a420-f05c7fdb6a34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="protobuf">
+      <UniqueIdentifier>{19778b24-691f-4f43-bf74-12a3fbff1c1d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\libraries\getopt\getopt_long.c">
+      <Filter>getopt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\libraries\getopt\getopt.c">
+      <Filter>getopt</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\protobuf\osmformat.pb-c_gen.c">
+      <Filter>protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\protobuf\fileformat.pb-c_gen.c">
+      <Filter>protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\util.cpp" />
+    <ClCompile Include="..\..\..\..\wildcmp.cpp" />
+    <ClCompile Include="..\..\..\..\expire-tiles.cpp" />
+    <ClCompile Include="..\..\..\..\geometry-builder.cpp" />
+    <ClCompile Include="..\..\..\..\geometry-processor.cpp" />
+    <ClCompile Include="..\..\..\..\id-tracker.cpp" />
+    <ClCompile Include="..\..\..\..\middle.cpp" />
+    <ClCompile Include="..\..\..\..\middle-pgsql.cpp" />
+    <ClCompile Include="..\..\..\..\middle-ram.cpp" />
+    <ClCompile Include="..\..\..\..\node-persistent-cache.cpp" />
+    <ClCompile Include="..\..\..\..\node-ram-cache.cpp" />
+    <ClCompile Include="..\..\..\..\options.cpp" />
+    <ClCompile Include="..\..\..\..\osm2pgsql.cpp" />
+    <ClCompile Include="..\..\..\..\osmdata.cpp" />
+    <ClCompile Include="..\..\..\..\output.cpp" />
+    <ClCompile Include="..\..\..\..\output-gazetteer.cpp" />
+    <ClCompile Include="..\..\..\..\output-multi.cpp" />
+    <ClCompile Include="..\..\..\..\output-null.cpp" />
+    <ClCompile Include="..\..\..\..\output-pgsql.cpp" />
+    <ClCompile Include="..\..\..\..\parse-osmium.cpp" />
+    <ClCompile Include="..\..\..\..\pgsql.cpp" />
+    <ClCompile Include="..\..\..\..\processor-line.cpp" />
+    <ClCompile Include="..\..\..\..\processor-point.cpp" />
+    <ClCompile Include="..\..\..\..\processor-polygon.cpp" />
+    <ClCompile Include="..\..\..\..\reprojection.cpp" />
+    <ClCompile Include="..\..\..\..\sprompt.cpp" />
+    <ClCompile Include="..\..\..\..\table.cpp" />
+    <ClCompile Include="..\..\..\..\taginfo.cpp" />
+    <ClCompile Include="..\..\..\..\tagtransform.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\libraries\getopt\getopt.h">
+      <Filter>getopt</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\config.h" />
+    <ClInclude Include="..\src\protobuf\osmformat.pb-c_gen.h">
+      <Filter>protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\protobuf\fileformat.pb-c_gen.h">
+      <Filter>protobuf</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

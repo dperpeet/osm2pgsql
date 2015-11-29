@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3AA7ED20-17BB-4E2E-8D3C-024FCD224BBB}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>osm2pgsql</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)..\..\..\bin\</OutDir>
+    <IntDir>$(SolutionDir)..\..\..\obj\$(ProjectName)\$(PlatformName)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)..\..\..\bin\</OutDir>
+    <IntDir>$(SolutionDir)..\..\..\obj\$(ProjectName)\$(PlatformName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>BUILD_READER_PBF;_CRT_NONSTDC_NO_DEPRECATE ;_CRT_SECURE_NO_DEPRECATE;WIN32;_WIN32;__WIN32__;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <C99Support>true</C99Support>
+      <AdditionalIncludeDirectories>$(MAPNIK_WINDOWS_BUILDS)\packages\boost;$(ProjectDir)..\..\..\libraries\libxml2\include;$(MAPNIK_WINDOWS_BUILDS)\packages\bzip2;$(MAPNIK_WINDOWS_BUILDS)\packages\zlib;$(ProjectDir)..\..\..\libraries\geos_3_4_2\include;$(MAPNIK_WINDOWS_BUILDS)\packages\proj\src;$(ProjectDir)..\..\..\libraries\protobuf-c-1_1_1\include;$(ProjectDir)..\..\..\libraries\getopt;$(MAPNIK_WINDOWS_BUILDS)\packages\postgresql\src\interfaces\libpq;$(MAPNIK_WINDOWS_BUILDS)\packages\postgresql\src\include;$(ProjectDir)..\src\protobuf;$(ProjectDir)..\src;$(ProjectDir)..\..\..\..\contrib\libosmium;$(MAPNIK_WINDOWS_BUILDS)\packages\expat\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\lib\$(PlatformName)\;$(MAPNIK_WINDOWS_BUILDS)\packages\boost\stage\lib;$(ProjectDir)..\..\..\libraries\geos_3_4_2\lib;$(MAPNIK_WINDOWS_BUILDS)\packages\postgresql\src\interfaces\libpq\Release;$(MAPNIK_WINDOWS_BUILDS)\packages\proj\src;$(ProjectDir)..\..\..\libraries\protobuf-c-1_1_1\lib;$(ProjectDir)..\..\..\libraries\libxml2\lib;$(MAPNIK_WINDOWS_BUILDS)\packages\zlib;$(MAPNIK_WINDOWS_BUILDS)\packages\bzip2</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Ws2_32.lib;libxml2.lib;geos.lib;libpq.lib;postgres.lib;libpgport.lib;libecpg.lib;protobuf-c_d.lib;proj.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>libdecimal.lib;libirc.lib;libmmdd.lib;svml_dispmd.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>BUILD_READER_PBF;_CRT_NONSTDC_NO_DEPRECATE ;_CRT_SECURE_NO_DEPRECATE;WIN32;_WIN32;__WIN32__;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <C99Support>true</C99Support>
+      <AdditionalIncludeDirectories>$(MAPNIK_WINDOWS_BUILDS)\packages\boost;$(ProjectDir)..\..\..\libraries\libxml2\include;$(MAPNIK_WINDOWS_BUILDS)\packages\bzip2;$(MAPNIK_WINDOWS_BUILDS)\packages\zlib;$(ProjectDir)..\..\..\libraries\geos_3_4_2\include;$(MAPNIK_WINDOWS_BUILDS)\packages\proj\src;$(ProjectDir)..\..\..\libraries\protobuf-c-1_1_1\include;$(ProjectDir)..\..\..\libraries\getopt;$(MAPNIK_WINDOWS_BUILDS)\packages\postgresql\src\interfaces\libpq;$(MAPNIK_WINDOWS_BUILDS)\packages\postgresql\src\include;$(ProjectDir)..\src\protobuf;$(ProjectDir)..\src;$(ProjectDir)..\..\..\..\contrib\libosmium;$(MAPNIK_WINDOWS_BUILDS)\packages\expat\lib;$(MAPNIK_WINDOWS_BUILDS)\packages\icu\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\lib\$(PlatformName)\;$(MAPNIK_WINDOWS_BUILDS)\packages\boost\stage\lib;$(ProjectDir)..\..\..\libraries\geos_3_4_2\lib;$(MAPNIK_WINDOWS_BUILDS)\packages\postgresql\src\interfaces\libpq\Release;$(MAPNIK_WINDOWS_BUILDS)\packages\proj\src;$(ProjectDir)..\..\..\libraries\protobuf-c-1_1_1\lib;$(ProjectDir)..\..\..\libraries\libxml2\lib;$(MAPNIK_WINDOWS_BUILDS)\packages\zlib;$(MAPNIK_WINDOWS_BUILDS)\packages\bzip2;$(MAPNIK_WINDOWS_BUILDS)\packages\expat\win32\bin\Release</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Ws2_32.lib;geos.lib;libpqdll.lib;proj.lib;libxml2.lib;protobuf-c.lib;zlib.lib;libbz2.lib;libexpat.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\expire-tiles.cpp" />
+    <ClCompile Include="..\..\..\..\geometry-builder.cpp" />
+    <ClCompile Include="..\..\..\..\geometry-processor.cpp" />
+    <ClCompile Include="..\..\..\..\id-tracker.cpp" />
+    <ClCompile Include="..\..\..\..\middle-pgsql.cpp" />
+    <ClCompile Include="..\..\..\..\middle-ram.cpp" />
+    <ClCompile Include="..\..\..\..\middle.cpp" />
+    <ClCompile Include="..\..\..\..\node-persistent-cache.cpp" />
+    <ClCompile Include="..\..\..\..\node-ram-cache.cpp" />
+    <ClCompile Include="..\..\..\..\options.cpp" />
+    <ClCompile Include="..\..\..\..\osm2pgsql.cpp" />
+    <ClCompile Include="..\..\..\..\osmdata.cpp" />
+    <ClCompile Include="..\..\..\..\output-gazetteer.cpp" />
+    <ClCompile Include="..\..\..\..\output-multi.cpp" />
+    <ClCompile Include="..\..\..\..\output-null.cpp" />
+    <ClCompile Include="..\..\..\..\output-pgsql.cpp" />
+    <ClCompile Include="..\..\..\..\output.cpp" />
+    <ClCompile Include="..\..\..\..\parse-osmium.cpp" />
+    <ClCompile Include="..\..\..\..\pgsql.cpp" />
+    <ClCompile Include="..\..\..\..\processor-line.cpp" />
+    <ClCompile Include="..\..\..\..\processor-point.cpp" />
+    <ClCompile Include="..\..\..\..\processor-polygon.cpp" />
+    <ClCompile Include="..\..\..\..\reprojection.cpp" />
+    <ClCompile Include="..\..\..\..\sprompt.cpp" />
+    <ClCompile Include="..\..\..\..\table.cpp" />
+    <ClCompile Include="..\..\..\..\taginfo.cpp" />
+    <ClCompile Include="..\..\..\..\tagtransform.cpp" />
+    <ClCompile Include="..\..\..\..\util.cpp" />
+    <ClCompile Include="..\..\..\..\wildcmp.cpp" />
+    <ClCompile Include="..\..\..\libraries\getopt\getopt.c" />
+    <ClCompile Include="..\..\..\libraries\getopt\getopt_long.c" />
+    <ClCompile Include="..\src\protobuf\fileformat.pb-c_gen.c" />
+    <ClCompile Include="..\src\protobuf\osmformat.pb-c_gen.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\libraries\getopt\getopt.h" />
+    <ClInclude Include="..\src\config.h" />
+    <ClInclude Include="..\src\protobuf\fileformat.pb-c_gen.h" />
+    <ClInclude Include="..\src\protobuf\osmformat.pb-c_gen.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
